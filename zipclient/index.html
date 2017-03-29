@@ -5,6 +5,8 @@
 	<title>Zips</title>
 	</head>
 	<body>
+		<div id="text">
+		</div>
 		<script>
 			loadPage();
 			function loadPage() {
@@ -14,6 +16,7 @@
 				ajax.onload = function() {
 					if (this.response != 200) {
 						console.log(this.responseText);
+						document.getElementById("text").innerHTML = this.responseText;
 					}
 				};
 				ajax.send();
