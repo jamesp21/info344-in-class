@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>Zips</title>
+	</head>
+	<body>
+		<script>
+			loadPage();
+			function loadPage() {
+				var ajax = new XMLHttpRequest();
+				
+				ajax.open("GET", "http://localhost:8000/zips/city/seattle", true);
+				ajax.onload = function() {
+					if (this.response != 200) {
+						console.log(this.responseText);
+					}
+				};
+				ajax.send();
+			}
+		</script>
+	</body>
+</html>
